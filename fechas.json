@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-17",
+  "actualizado": "2026-11-18",
   "mes": "2026-11",
   "canales": [
     "https://t.me/AsesorVirtualC",
@@ -29,12 +29,12 @@
     {
       "tipo": "fecha",
       "etiqueta": "Credenciales de Legalización",
-      "fecha": "2026-08-17",
-      "precision": "dia",
-      "mensaje": "2026-10-29",
+      "fecha": "2026-08-01",
+      "precision": "mes",
+      "mensaje": "2026-11-18",
       "fuente": "https://t.me/AsesorVirtualC",
-      "texto": "👨💻AVC REPORTES 👉🏻 SERVICIO CONSULAR: LEGALIZACIÓN CONSULAR CREDENCIALES 17DE AGOSTO DE 2026 📝 Información recopilada de grupos y clientes HORARIO ESTI",
-      "antiguo": true
+      "texto": "📱AVC REPORTES 👉🏻 SERVICIO CONSULAR: LEGALIZACIÓN CONSULAR CREDENCIALES 🦖🦖DE AGOSTO DE 2026 📝 Información recopilada de grupos y clientes HORARIO ESTIM",
+      "antiguo": false
     },
     {
       "tipo": "fecha",
