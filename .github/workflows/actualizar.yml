@@ -1,0 +1,45 @@
+name: Actualizar fechas (Telegram, texto)
+
+on:
+  schedule:
+    - cron: "40 6 * * *"     # diario, 06:40 UTC (02:40 en Cuba)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+# evita que dos ejecuciones se pisen
+concurrency:
+  group: actualizar-fechas
+  cancel-in-progress: false
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Sin dependencias externas: solo librería estándar.
+      # Si Telegram corta la conexión, se reintenta una vez más.
+      - name: Leer el texto de los canales
+        run: |
+          python3 actualizar.py || (echo "primer intento falló; reintentando en 60s…"; sleep 60; python3 actualizar.py)
+
+      - name: Publicar cambios
+        run: |
+          git config user.name  "consulado-fechas-bot"
+          git config user.email "actions@users.noreply.github.com"
+          if git diff --quiet fechas.json; then
+            echo "Sin novedades en los canales."
+          else
+            echo "--- cambio detectado ---"
+            git --no-pager diff --stat fechas.json
+            git add fechas.json
+            git commit -m "fechas: actualizado $(python3 -c "import json;print(json.load(open('fechas.json'))['actualizado'])")"
+            git push
+          fi
