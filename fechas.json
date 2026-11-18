@@ -1,0 +1,120 @@
+{
+  "actualizado": "2026-11-17",
+  "mes": "2026-11",
+  "canales": [
+    "https://t.me/AsesorVirtualC",
+    "https://t.me/LMDCuba"
+  ],
+  "datos": [
+    {
+      "tipo": "fecha",
+      "etiqueta": "Anexo 7 · Aprobados",
+      "fecha": "2025-01-17",
+      "mensaje": "2026-09-14",
+      "fuente": "https://t.me/LMDCuba",
+      "texto": "🌐 WEB OFICIAL DE CONSULTA DE EXPEDIENTES 🔄 En proceso de actualización El Consulado General de España en La Habana está actualizando su web de consult",
+      "precision": "dia",
+      "antiguo": true
+    },
+    {
+      "tipo": "fecha",
+      "etiqueta": "Credenciales LMD",
+      "fecha": "2024-12-24",
+      "precision": "dia",
+      "mensaje": "2026-11-11",
+      "fuente": "https://t.me/AsesorVirtualC",
+      "texto": "⚡LLEGANDO CREDENCIALES DE SERVICIO: LMD CONSULADO ESPAÑOL EN LA HABANA 📌 SOLICITUD DE CREDENCIALES: 24DE DICIEMBRE 2024 ✅Información verificada por nu",
+      "antiguo": false
+    },
+    {
+      "tipo": "fecha",
+      "etiqueta": "Credenciales de Legalización",
+      "fecha": "2026-08-17",
+      "precision": "dia",
+      "mensaje": "2026-10-29",
+      "fuente": "https://t.me/AsesorVirtualC",
+      "texto": "👨💻AVC REPORTES 👉🏻 SERVICIO CONSULAR: LEGALIZACIÓN CONSULAR CREDENCIALES 17DE AGOSTO DE 2026 📝 Información recopilada de grupos y clientes HORARIO ESTI",
+      "antiguo": true
+    },
+    {
+      "tipo": "fecha",
+      "etiqueta": "Credenciales de Visado de Residencia",
+      "fecha": "2026-07-25",
+      "precision": "dia",
+      "mensaje": "2026-09-07",
+      "fuente": "https://t.me/LMDCuba",
+      "texto": "📊 BOLETÍN INFORMATIVO - SEPTIEMBRE 2026 🇪🇸 Consulado General de España en La Habana ⚠ NOTICIA DESTACADA: Las Credenciales LMD superaron los 650 días (",
+      "antiguo": true
+    },
+    {
+      "tipo": "fecha",
+      "etiqueta": "Credenciales de Visado de Turismo",
+      "fecha": "2026-01-25",
+      "precision": "dia",
+      "mensaje": "2026-09-08",
+      "fuente": "https://t.me/AsesorVirtualC",
+      "texto": "📬SUS REPORTES – AVC 👉🏻 LLEGANDO CREDENCIALES DE VISADO DE TURISMO 📌 Solicitudes realizadas: 25de ENERO de 2026 ⏰ Horario estimado de envío: (En proces",
+      "antiguo": true
+    },
+    {
+      "tipo": "fecha",
+      "etiqueta": "Inscripción Directa",
+      "fecha": "2026-10-01",
+      "precision": "mes",
+      "mensaje": "2026-11-17",
+      "fuente": "https://t.me/AsesorVirtualC",
+      "texto": "AVC REPORTES 🕖SERVICIO CONSULAR INSCRIPCIÓN DIRECTA MENORES 🔢🔢DE OCTUBRE DE 2026 ✅ LLEGANDO LITERALES DE NACIMIENTO ⭐ ¡Enhorabuena!🥳 🤖 Síguenos en nue",
+      "antiguo": false
+    },
+    {
+      "tipo": "fecha",
+      "etiqueta": "LMD · Aprobados",
+      "fecha": "2025-04-09",
+      "mensaje": "2026-09-14",
+      "fuente": "https://t.me/LMDCuba",
+      "texto": "🌐 WEB OFICIAL DE CONSULTA DE EXPEDIENTES 🔄 En proceso de actualización El Consulado General de España en La Habana está actualizando su web de consult",
+      "precision": "dia",
+      "antiguo": true
+    },
+    {
+      "tipo": "fecha",
+      "etiqueta": "LMD · Inscritos",
+      "fecha": "2025-02-04",
+      "mensaje": "2026-09-14",
+      "fuente": "https://t.me/LMDCuba",
+      "texto": "🌐 WEB OFICIAL DE CONSULTA DE EXPEDIENTES 🔄 En proceso de actualización El Consulado General de España en La Habana está actualizando su web de consult",
+      "precision": "dia",
+      "antiguo": true
+    },
+    {
+      "tipo": "fecha",
+      "etiqueta": "Literales",
+      "fecha": "2026-10-15",
+      "precision": "dia",
+      "mensaje": "2026-11-08",
+      "fuente": "https://t.me/LMDCuba",
+      "texto": "⚠ ELECCIONES DEL 29N: ESTAR EN EL CENSO NO BASTA PARA VOTAR SI OBTUVISTE LA NACIONALIDAD POR LMD Estimada comunidad, Si recibiste del INE tu certifica",
+      "antiguo": false
+    },
+    {
+      "tipo": "fecha",
+      "etiqueta": "Primer Pasaporte",
+      "fecha": "2026-09-17",
+      "precision": "dia",
+      "mensaje": "2026-11-11",
+      "fuente": "https://t.me/AsesorVirtualC",
+      "texto": "📢 AVC REPORTES 🕖SERVICIO CONSULAR Solicitudes de Primer Pasaporte Español 17DE SEPTIEMBRE DE 2026 ✅ YA DISPONIBLES PARA RECOGIDA ⭐ ¡Enhorabuena!🥳 🤖 Sí",
+      "antiguo": false
+    },
+    {
+      "tipo": "fecha",
+      "etiqueta": "Transcripción de Matrimonio",
+      "fecha": "2026-10-01",
+      "precision": "mes",
+      "mensaje": "2026-10-06",
+      "fuente": "https://t.me/AsesorVirtualC",
+      "texto": "👨💻AVC REPORTES 👉🏻 SERVICIO CONSULAR: TRANSCRIPCIÓN Y CERTIFICADO DE MATRIMONIO CREDENCIALES 😀😀DE OCTUBRE DE 2026 📝 Información recopilada de grupos y ",
+      "antiguo": true
+    }
+  ]
+}

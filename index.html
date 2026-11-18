@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DATA ARUCA — Soluciones digitales para negocios | Jovellanos, Matanzas</title>
+<meta name="description" content="DATA ARUCA: catálogos digitales, páginas web, apps APK y sistemas de venta para negocios cubanos. Además, seguimiento de los trámites del Consulado de España en La Habana.">
+<meta name="theme-color" content="#04070d">
+<link rel="icon" href="logo.jpg">
+<style>
+:root{
+  --bg:#04070d; --bg2:#070d18; --panel:rgba(255,255,255,.035); --panel2:rgba(255,255,255,.06);
+  --line:rgba(120,170,255,.16); --line2:rgba(120,170,255,.30);
+  --txt:#eaf2ff; --dim:#8ba0bd; --dim2:#5f7a9b;
+  --blue:#2b7fff; --blue2:#4cc9f0; --plat:#dfe7ef;
+  --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--txt);
+  font-family:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(900px 500px at 78% -8%, rgba(43,127,255,.20), transparent 62%),
+    radial-gradient(700px 520px at 8% 12%, rgba(76,201,240,.10), transparent 60%),
+    radial-gradient(800px 600px at 50% 105%, rgba(43,127,255,.10), transparent 65%);
+}
+.wrap{position:relative;z-index:1;max-width:var(--max);margin:0 auto;padding:0 22px}
+
+/* ---------- nav ---------- */
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);
+    background:rgba(4,7,13,.72);border-bottom:1px solid var(--line)}
+nav .in{max-width:var(--max);margin:0 auto;padding:10px 22px;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--txt)}
+.brand img{width:38px;height:38px;border-radius:50%;box-shadow:0 0 0 1px var(--line2),0 0 22px rgba(43,127,255,.45)}
+.brand b{font-size:1rem;letter-spacing:.16em;font-weight:800}
+.brand span{display:block;font-size:.62rem;letter-spacing:.28em;color:var(--dim);text-transform:uppercase}
+nav .links{margin-left:auto;display:flex;gap:20px;align-items:center}
+nav a.l{color:var(--dim);text-decoration:none;font-size:.86rem;transition:.2s}
+nav a.l:hover{color:var(--txt)}
+@media (max-width:760px){ nav .links a.l{display:none} }
+
+/* ---------- botones ---------- */
+.btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-weight:700;
+     font-size:.9rem;padding:12px 20px;border-radius:12px;border:1px solid transparent;
+     transition:transform .18s, box-shadow .18s, background .18s}
+.btn:hover{transform:translateY(-2px)}
+.btn-wa{background:linear-gradient(135deg,#25d366,#12a150);color:#03210f;
+        box-shadow:0 10px 28px rgba(37,211,102,.28)}
+.btn-ghost{background:rgba(255,255,255,.04);border-color:var(--line2);color:var(--txt)}
+.btn-blue{background:linear-gradient(135deg,var(--blue),#1558d6);color:#fff;
+          box-shadow:0 10px 30px rgba(43,127,255,.35)}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* ---------- hero ---------- */
+header.hero{padding:64px 0 40px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+@media (max-width:900px){ header.hero{grid-template-columns:1fr;gap:34px;padding:44px 0 20px} }
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;letter-spacing:.22em;
+         text-transform:uppercase;color:var(--blue2);border:1px solid var(--line2);
+         padding:6px 13px;border-radius:99px;background:rgba(43,127,255,.07)}
+h1{font-size:clamp(2rem,4.6vw,3.35rem);line-height:1.08;letter-spacing:-.035em;margin:20px 0 0;
+   background:linear-gradient(180deg,#fff,#a9c4e8 70%,#7f9dc4);
+   -webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--blue2),var(--blue));
+      -webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--dim);font-size:1.03rem;max-width:52ch;margin:18px 0 0}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.chip{font-size:.74rem;color:var(--dim);border:1px solid var(--line);border-radius:99px;
+      padding:6px 12px;background:var(--panel)}
+.chip b{color:var(--plat)}
+.heroArt{position:relative;display:grid;place-items:center}
+.heroArt .ring{width:min(100%,380px);aspect-ratio:1;border-radius:50%;padding:10px;
+  background:conic-gradient(from 200deg,rgba(43,127,255,.65),rgba(76,201,240,.15),rgba(43,127,255,.65));
+  animation:spin 18s linear infinite}
+.heroArt .ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;
+  animation:spin 18s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.heroArt .glow{position:absolute;width:70%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,rgba(43,127,255,.35),transparent 68%);filter:blur(24px);z-index:-1}
+
+/* ---------- secciones ---------- */
+section{padding:64px 0}
+.sHead{margin-bottom:30px}
+.sHead .tag{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--blue2);font-weight:700}
+.sHead h2{font-size:clamp(1.5rem,3vw,2.15rem);letter-spacing:-.028em;margin:8px 0 0;font-weight:800}
+.sHead p{color:var(--dim);margin:10px 0 0;max-width:62ch}
+
+/* ---------- trámites ---------- */
+.bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;
+     background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:13px 16px;margin-bottom:18px}
+.bar .st{font-size:.82rem;color:var(--dim)}
+.bar .st b{color:var(--plat)}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#25d366;margin-right:7px;
+     box-shadow:0 0 10px #25d366}
+#revisar{gap:8px}
+#revisar.loading{opacity:.7;pointer-events:none}
+.tram{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:14px}
+.card{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+  border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;overflow:hidden;
+  transition:transform .2s,border-color .2s,box-shadow .2s}
+.card:hover{transform:translateY(-3px);border-color:var(--line2);box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.card::after{content:"";position:absolute;inset:0;border-radius:16px;pointer-events:none;
+  background:radial-gradient(400px 120px at 100% 0,rgba(43,127,255,.16),transparent 70%)}
+.card .k{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue2);font-weight:700}
+.card .v{font-size:1.62rem;font-weight:800;letter-spacing:-.03em;margin:6px 0 2px;line-height:1.15}
+.card .v small{font-size:.85rem;font-weight:600;color:var(--dim);letter-spacing:0}
+.card .m{font-size:.77rem;color:var(--dim)}
+.card .m a{color:var(--blue2);text-decoration:none}
+.card .q{margin-top:10px;font-size:.72rem;color:#6f86a3;border-top:1px solid var(--line);padding-top:9px;
+         font-style:italic;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.warn{margin-top:16px;border-left:3px solid #e2b04a;background:rgba(226,176,74,.07);
+      border-radius:10px;padding:12px 14px;font-size:.8rem;color:#c8b48a}
+.warn b{color:#e8cf9c}
+
+.estado{font-size:.8rem;color:var(--dim);margin:-6px 0 16px;min-height:1.2em}
+.estado b{color:var(--plat)}
+.estado.err{color:#f0a8a0}
+.tag-ant{display:inline-block;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;
+  font-weight:700;padding:2px 7px;border-radius:5px;margin-left:7px;vertical-align:middle;
+  background:rgba(226,176,74,.14);color:#e2b04a;border:1px solid rgba(226,176,74,.35)}
+.attr{font-size:.76rem;color:#6f86a3;margin-top:14px}
+.attr a{color:var(--blue2);text-decoration:none}
+.spin{display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.35);
+  border-top-color:#fff;border-radius:50%;animation:sp .7s linear infinite;vertical-align:-2px;margin-right:6px}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+/* ---------- servicios ---------- */
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.srv{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));
+  border:1px solid var(--line);border-radius:16px;padding:22px;transition:.22s;display:flex;flex-direction:column}
+.srv:hover{border-color:var(--line2);transform:translateY(-3px);box-shadow:0 20px 44px rgba(0,0,0,.5)}
+.srv .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;margin-bottom:14px;
+  background:linear-gradient(135deg,rgba(43,127,255,.28),rgba(76,201,240,.10));border:1px solid var(--line2)}
+.srv .ic svg{width:22px;height:22px;stroke:var(--blue2);fill:none;stroke-width:1.7}
+.srv h3{margin:0 0 6px;font-size:1.06rem;letter-spacing:-.01em}
+.srv p{margin:0;color:var(--dim);font-size:.88rem;flex:1}
+.srv .pr{margin-top:14px;font-size:.82rem;color:var(--plat);font-weight:700}
+.srv .pr span{color:var(--dim);font-weight:500}
+.srv a.mini{margin-top:12px;font-size:.8rem;color:var(--blue2);text-decoration:none;font-weight:700}
+.srv a.mini:hover{text-decoration:underline}
+
+/* ---------- pasos ---------- */
+.pasos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;counter-reset:p}
+.paso{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;position:relative}
+.paso::before{counter-increment:p;content:counter(p,decimal-leading-zero);position:absolute;top:14px;right:16px;
+  font-size:2.1rem;font-weight:800;color:rgba(43,127,255,.22);letter-spacing:-.05em}
+.paso h4{margin:0 0 6px;font-size:.98rem}
+.paso p{margin:0;color:var(--dim);font-size:.85rem}
+
+/* ---------- contacto ---------- */
+.contacto{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+@media (max-width:820px){ .contacto{grid-template-columns:1fr} }
+.cbox{background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.02));
+  border:1px solid var(--line);border-radius:18px;padding:26px}
+.cbox h3{margin:0 0 8px;font-size:1.25rem;letter-spacing:-.02em}
+.cbox p{margin:0 0 18px;color:var(--dim);font-size:.9rem}
+.tels{display:flex;flex-direction:column;gap:9px;margin-top:16px}
+.tel{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--txt);
+  background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:11px;padding:11px 13px;
+  font-size:.92rem;font-weight:600;transition:.18s}
+.tel:hover{border-color:var(--line2);background:rgba(43,127,255,.10)}
+.tel small{color:var(--dim);font-weight:500;font-size:.74rem;margin-left:auto}
+.fb{display:flex;gap:14px;align-items:center;text-decoration:none;color:var(--txt);
+  border:1px solid var(--line2);border-radius:13px;padding:14px;background:rgba(24,119,242,.10);transition:.2s}
+.fb:hover{background:rgba(24,119,242,.18);transform:translateY(-2px)}
+.fb .fbi{width:40px;height:40px;border-radius:10px;background:#1877f2;display:grid;place-items:center;flex:none}
+.fb .fbi svg{width:22px;height:22px;fill:#fff}
+.fb b{display:block;font-size:.93rem}
+.fb span{font-size:.76rem;color:var(--dim)}
+
+footer{border-top:1px solid var(--line);padding:30px 0 42px;margin-top:40px;font-size:.8rem;color:var(--dim)}
+footer .in{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+footer .by{display:flex;align-items:center;gap:10px}
+footer .by img{width:26px;height:26px;border-radius:50%;box-shadow:0 0 0 1px var(--line2)}
+footer b{color:var(--plat)}
+footer a{color:var(--blue2);text-decoration:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+.rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){ .rv{opacity:1;transform:none} .heroArt .ring,.heroArt .ring img{animation:none} }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="in">
+    <a class="brand" href="#top">
+      <img src="logo.jpg" alt="DATA ARUCA">
+      <div><b>D.A.T.A</b><span>Aruca</span></div>
+    </a>
+    <div class="links">
+      <a class="l" href="#tramites">Trámites</a>
+      <a class="l" href="#servicios">Servicios</a>
+      <a class="l" href="#contacto">Contacto</a>
+      <a class="btn btn-wa" data-wa="una consulta general" href="#">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.4A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3 0-1.4.7-2.1 1-2.4.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.2.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l2 .9c.2.1.4.2.4.3.1.3.1.7-.1 1.3Z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap" id="top">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div>
+      <div class="eyebrow">Jovellanos · Matanzas · Cuba</div>
+      <h1>Datos, ideas y oportunidades que conectan <em>un mejor mañana</em>.</h1>
+      <p class="lead">
+        Somos <b>padre e hijo</b> y hacemos lo que tu negocio necesita para dejar de trabajar a ciegas:
+        catálogos digitales con pedidos por WhatsApp, páginas web, aplicaciones y sistemas de venta.
+        Y mantenemos al día la información de los trámites del <b>Consulado de España en La Habana</b>.
+      </p>
+      <div class="cta">
+        <a class="btn btn-wa" data-wa="información sobre sus servicios" href="#">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.4A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3 0-1.4.7-2.1 1-2.4.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.2.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l2 .9c.2.1.4.2.4.3.1.3.1.7-.1 1.3Z"/></svg>
+          Escríbenos por WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="#tramites">Ver trámites del consulado</a>
+      </div>
+      <div class="chips">
+        <span class="chip">📞 <b>+53 52164763</b></span>
+        <span class="chip">📞 <b>+53 55857689</b></span>
+        <span class="chip">🧑‍💻 Programado por <b>DATA ARUCA</b></span>
+      </div>
+    </div>
+    <div class="heroArt">
+      <div class="glow"></div>
+      <div class="ring"><img src="logo.jpg" alt="Logotipo DATA ARUCA"></div>
+    </div>
+  </header>
+
+  <!-- TRÁMITES -->
+  <section id="tramites">
+    <div class="sHead rv">
+      <div class="tag">Información consular</div>
+      <h2>¿Por dónde van los trámites del Consulado?</h2>
+      <p>
+        Recopilado automáticamente de los canales de Telegram que publican el avance de los trámites
+        del Consulado General de España en La Habana. Cada dato lleva la fecha del mensaje del que sale.
+      </p>
+    </div>
+
+    <div class="bar rv">
+      <div class="st"><span class="dot"></span>Última revisión de fuentes: <b id="actualizado">—</b> <span id="hace"></span></div>
+      <button class="btn btn-blue" id="revisar" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12a9 9 0 1 1-2.6-6.4M21 3v6h-6"/></svg>
+        <span id="revisarTxt">Revisar fuentes</span>
+      </button>
+    </div>
+
+    <div class="estado" id="estado" role="status" aria-live="polite"></div>
+
+    <div class="tram" id="tram"></div>
+
+    <div class="attr rv" id="attr"></div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <div class="sHead rv">
+      <div class="tag">Lo que hacemos</div>
+      <h2>Servicios para tu negocio</h2>
+      <p>Precio cerrado antes de empezar. Sin mensualidades escondidas y sin depender de nadie para operar lo tuyo.</p>
+    </div>
+
+    <div class="grid3">
+      <article class="srv rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 6v13a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V6M8 6V4h8v2M9 12h6M9 16h4"/></svg></div>
+        <h3>Catálogo digital con pedidos por WhatsApp</h3>
+        <p>Tus fotos, precios y categorías en una sola página. El cliente elige y el pedido te llega directo a WhatsApp. Tú mismo lo editas, sin depender de nadie.</p>
+        <div class="pr">desde 15 USD <span>· pago único</span></div>
+        <a class="mini" data-wa="el catálogo digital (Básico 15 / Estándar 25 / Premium 30)" href="#">Consultar este servicio →</a>
+      </article>
+
+      <article class="srv rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 3h18v4H3zM3 10h18v11H3zM7 14h4"/></svg></div>
+        <h3>La Tienda — punto de venta</h3>
+        <p>El vendedor cobra, el inventario se descuenta solo y la caja se cuadra sin cuentas a mano. El dueño ve ventas, costos y ganancias desde su teléfono.</p>
+        <div class="pr">Incluye <span>3 días de prueba · panel admin gratis</span></div>
+        <a class="mini" data-wa="La Tienda y su panel de administración" href="#">Consultar este servicio →</a>
+      </article>
+
+      <article class="srv rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18ZM3 12h18M12 3c2.5 2.4 3.8 5.5 3.8 9S14.5 18.6 12 21c-2.5-2.4-3.8-5.5-3.8-9S9.5 5.4 12 3Z"/></svg></div>
+        <h3>Páginas web para negocios</h3>
+        <p>Servicios, catálogo, horarios, ubicación y un botón que abre tu WhatsApp. Lista para verse bien en el celular, que es donde te van a mirar.</p>
+        <div class="pr">a consultar <span>· precio cerrado por escrito</span></div>
+        <a class="mini" data-wa="una página web para mi negocio" href="#">Consultar este servicio →</a>
+      </article>
+
+      <article class="srv rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M7 2h10a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1ZM10 5h4M11 19h2"/></svg></div>
+        <h3>Aplicaciones APK a medida</h3>
+        <p>Inventario, clientes, deudas, acuerdos o registros internos. Se instalan en el teléfono o la PC que ya tienes, sin comprar equipos nuevos.</p>
+        <div class="pr">a consultar</div>
+        <a class="mini" data-wa="una aplicación APK a la medida" href="#">Consultar este servicio →</a>
+      </article>
+
+      <article class="srv rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 20h16M6 20V9l6-5 6 5v11M10 20v-6h4v6"/></svg></div>
+        <h3>Alojamiento y mantenimiento</h3>
+        <p>Tu catálogo o tu web en línea, con copias de seguridad y soporte para que no tengas que preocuparte por lo técnico.</p>
+        <div class="pr">7 USD <span>/ mes</span></div>
+        <a class="mini" data-wa="el alojamiento y mantenimiento (7 USD/mes)" href="#">Consultar este servicio →</a>
+      </article>
+
+      <article class="srv rv">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.9L12 3Z"/></svg></div>
+        <h3>Diseño para redes y asesoría</h3>
+        <p>Logo, portada, banner y piezas para tus publicaciones. Y si estás empezando, te orientamos para digitalizar el negocio paso a paso.</p>
+        <div class="pr">a consultar</div>
+        <a class="mini" data-wa="diseño gráfico / asesoría digital" href="#">Consultar este servicio →</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- CÓMO TRABAJAMOS -->
+  <section>
+    <div class="sHead rv">
+      <div class="tag">Cómo trabajamos</div>
+      <h2>Cuatro pasos, sin enredos</h2>
+    </div>
+    <div class="pasos rv">
+      <div class="paso"><h4>Nos cuentas qué te frena</h4><p>Sin tecnicismos. Si es “no sé cuánto gano”, con eso empezamos.</p></div>
+      <div class="paso"><h4>Te proponemos lo más simple</h4><p>Lo que lo resuelve, no lo más caro. Con tiempo y precio claros por escrito.</p></div>
+      <div class="paso"><h4>Lo construimos y te enseñamos</h4><p>Nada de entregarte algo que no entiendes ni que no puedes operar.</p></div>
+      <div class="paso"><h4>Te acompañamos después</h4><p>Si algo falla o quieres añadir algo, nos escribes y lo vemos.</p></div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="sHead rv">
+      <div class="tag">Hablemos</div>
+      <h2>Escríbenos y te respondemos hoy</h2>
+      <p>Te atiende quien hace el trabajo. Sin intermediarios ni call center.</p>
+    </div>
+    <div class="contacto">
+      <div class="cbox rv">
+        <h3>WhatsApp directo</h3>
+        <p>Toca un número y el mensaje te sale ya escrito, indicando que vienes desde esta página.</p>
+        <a class="btn btn-wa" data-wa="una consulta" href="#">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.4A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3 0-1.4.7-2.1 1-2.4.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.2.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l2 .9c.2.1.4.2.4.3.1.3.1.7-.1 1.3Z"/></svg>
+          Abrir WhatsApp
+        </a>
+        <div class="tels">
+          <a class="tel" href="tel:+5352164763">📱 +53 52164763 <small>móvil</small></a>
+          <a class="tel" href="tel:+5355857689">📱 +53 55857689 <small>móvil</small></a>
+        </div>
+      </div>
+      <div class="cbox rv">
+        <h3>Síguenos</h3>
+        <p>Publicamos lo que vamos haciendo, ofertas y avisos útiles.</p>
+        <a class="fb" href="https://www.facebook.com/dataaruca/" target="_blank" rel="noopener">
+          <span class="fbi"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.3-1.5 1.6-1.5h1.6V4.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.3H7.6V14h2.7v8h3.2Z"/></svg></span>
+          <span><b>DATA ARUCA en Facebook</b><span>facebook.com/dataaruca</span></span>
+        </a>
+        <p style="margin-top:16px;font-size:.8rem">
+          📍 Jovellanos, Matanzas · atendemos toda la provincia y trabajamos a distancia.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="in">
+      <div class="by">
+        <img src="logo.jpg" alt="">
+        <div>Programado por <b>DATA ARUCA</b> · Datos, ideas y oportunidades<br>
+        <span style="font-size:.75rem">© <span id="anio">2026</span> DATA ARUCA · Jovellanos, Matanzas</span></div>
+      </div>
+      <div>
+        <a href="https://www.facebook.com/dataaruca/" target="_blank" rel="noopener">Facebook</a> ·
+        <a href="#tramites">Trámites</a> ·
+        <a href="#servicios">Servicios</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+const FALLBACK = {"actualizado": "2026-11-17", "mes": "2026-11", "canales": ["https://t.me/AsesorVirtualC", "https://t.me/LMDCuba"], "datos": [{"tipo": "fecha", "etiqueta": "Anexo 7 · Aprobados", "fecha": "2025-01-17", "mensaje": "2026-09-14", "fuente": "https://t.me/LMDCuba", "texto": "🌐 WEB OFICIAL DE CONSULTA DE EXPEDIENTES 🔄 En proceso de actualización El Consulado General de España en La Habana está actualizando su web de consult", "precision": "dia", "antiguo": true}, {"tipo": "fecha", "etiqueta": "Credenciales LMD", "fecha": "2024-12-24", "precision": "dia", "mensaje": "2026-11-11", "fuente": "https://t.me/AsesorVirtualC", "texto": "⚡LLEGANDO CREDENCIALES DE SERVICIO: LMD CONSULADO ESPAÑOL EN LA HABANA 📌 SOLICITUD DE CREDENCIALES: 24DE DICIEMBRE 2024 ✅Información verificada por nu", "antiguo": false}, {"tipo": "fecha", "etiqueta": "Credenciales de Legalización", "fecha": "2026-08-17", "precision": "dia", "mensaje": "2026-10-29", "fuente": "https://t.me/AsesorVirtualC", "texto": "👨💻AVC REPORTES 👉🏻 SERVICIO CONSULAR: LEGALIZACIÓN CONSULAR CREDENCIALES 17DE AGOSTO DE 2026 📝 Información recopilada de grupos y clientes HORARIO ESTI", "antiguo": true}, {"tipo": "fecha", "etiqueta": "Credenciales de Visado de Residencia", "fecha": "2026-07-25", "precision": "dia", "mensaje": "2026-09-07", "fuente": "https://t.me/LMDCuba", "texto": "📊 BOLETÍN INFORMATIVO - SEPTIEMBRE 2026 🇪🇸 Consulado General de España en La Habana ⚠ NOTICIA DESTACADA: Las Credenciales LMD superaron los 650 días (", "antiguo": true}, {"tipo": "fecha", "etiqueta": "Credenciales de Visado de Turismo", "fecha": "2026-01-25", "precision": "dia", "mensaje": "2026-09-08", "fuente": "https://t.me/AsesorVirtualC", "texto": "📬SUS REPORTES – AVC 👉🏻 LLEGANDO CREDENCIALES DE VISADO DE TURISMO 📌 Solicitudes realizadas: 25de ENERO de 2026 ⏰ Horario estimado de envío: (En proces", "antiguo": true}, {"tipo": "fecha", "etiqueta": "Inscripción Directa", "fecha": "2026-10-01", "precision": "mes", "mensaje": "2026-11-17", "fuente": "https://t.me/AsesorVirtualC", "texto": "AVC REPORTES 🕖SERVICIO CONSULAR INSCRIPCIÓN DIRECTA MENORES 🔢🔢DE OCTUBRE DE 2026 ✅ LLEGANDO LITERALES DE NACIMIENTO ⭐ ¡Enhorabuena!🥳 🤖 Síguenos en nue", "antiguo": false}, {"tipo": "fecha", "etiqueta": "LMD · Aprobados", "fecha": "2025-04-09", "mensaje": "2026-09-14", "fuente": "https://t.me/LMDCuba", "texto": "🌐 WEB OFICIAL DE CONSULTA DE EXPEDIENTES 🔄 En proceso de actualización El Consulado General de España en La Habana está actualizando su web de consult", "precision": "dia", "antiguo": true}, {"tipo": "fecha", "etiqueta": "LMD · Inscritos", "fecha": "2025-02-04", "mensaje": "2026-09-14", "fuente": "https://t.me/LMDCuba", "texto": "🌐 WEB OFICIAL DE CONSULTA DE EXPEDIENTES 🔄 En proceso de actualización El Consulado General de España en La Habana está actualizando su web de consult", "precision": "dia", "antiguo": true}, {"tipo": "fecha", "etiqueta": "Literales", "fecha": "2026-10-15", "precision": "dia", "mensaje": "2026-11-08", "fuente": "https://t.me/LMDCuba", "texto": "⚠ ELECCIONES DEL 29N: ESTAR EN EL CENSO NO BASTA PARA VOTAR SI OBTUVISTE LA NACIONALIDAD POR LMD Estimada comunidad, Si recibiste del INE tu certifica", "antiguo": false}, {"tipo": "fecha", "etiqueta": "Primer Pasaporte", "fecha": "2026-09-17", "precision": "dia", "mensaje": "2026-11-11", "fuente": "https://t.me/AsesorVirtualC", "texto": "📢 AVC REPORTES 🕖SERVICIO CONSULAR Solicitudes de Primer Pasaporte Español 17DE SEPTIEMBRE DE 2026 ✅ YA DISPONIBLES PARA RECOGIDA ⭐ ¡Enhorabuena!🥳 🤖 Sí", "antiguo": false}, {"tipo": "fecha", "etiqueta": "Transcripción de Matrimonio", "fecha": "2026-10-01", "precision": "mes", "mensaje": "2026-10-06", "fuente": "https://t.me/AsesorVirtualC", "texto": "👨💻AVC REPORTES 👉🏻 SERVICIO CONSULAR: TRANSCRIPCIÓN Y CERTIFICADO DE MATRIMONIO CREDENCIALES 😀😀DE OCTUBRE DE 2026 📝 Información recopilada de grupos y ", "antiguo": true}]};
+
+const M = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const larga = iso => { if(!iso) return "—"; const [y,m,d] = iso.split("-").map(Number); return `${d} de ${M[m-1]} de ${y}`; };
+const mesDe = iso => { if(!iso) return "—"; const [y,m] = iso.split("-").map(Number); return `${M[m-1]} de ${y}`; };
+const mesLargo = m => { if(!m) return "—"; const [y,mm] = m.split("-").map(Number); return `${M[mm-1]} de ${y}`; };
+const canalDe = url => "@" + String(url).replace(/\/$/,"").split("/").pop();
+
+function hace(iso){
+  if(!iso) return "";
+  const [y,m,d] = iso.split("-").map(Number);
+  const dias = Math.round((Date.now() - Date.UTC(y,m-1,d)) / 86400000);
+  if (dias <= 0) return "(hoy)";
+  if (dias === 1) return "(ayer)";
+  const meses = Math.round(dias/30.44);
+  if (meses < 1) return `(hace ${dias} días)`;
+  if (meses < 12) return `(hace ${meses} ${meses===1?"mes":"meses"})`;
+  const a = Math.floor(meses/12), r = meses%12;
+  return `(hace ${a} ${a===1?"año":"años"}` + (r ? ` y ${r} ${r===1?"mes":"meses"})` : ")");
+}
+
+function pintaTramites(d){
+  const items = (d.datos || []).slice();
+  items.sort((a,b) => (a.tipo === b.tipo) ? 0 : (a.tipo === "fecha" ? -1 : 1));
+
+  document.getElementById("tram").innerHTML = items.map(x => {
+    const esFecha = x.tipo === "fecha";
+    const ant = x.antiguo ? '<span class="tag-ant">reporte anterior</span>' : "";
+    return '<article class="card">'
+      + '<div class="k">' + esc(x.etiqueta) + (esFecha ? "" : " · demora") + ant + '</div>'
+      + '<div class="v">' + (esFecha
+            ? (x.precision === "mes" ? mesDe(x.fecha) : larga(x.fecha))
+            : x.dias + ' <small>días</small>') + '</div>'
+      + '<div class="m">' + (esFecha
+          ? 'Reportado el ' + larga(x.mensaje) + (x.precision === "mes" ? ' · el canal solo publicó el mes' : '') + ' · <a href="' + esc(x.fuente) + '" target="_blank" rel="noopener">' + esc(canalDe(x.fuente)) + '</a>'
+          : 'Boletín del ' + larga(x.mensaje) + ' · <a href="' + esc(x.fuente) + '" target="_blank" rel="noopener">' + esc(canalDe(x.fuente)) + '</a>')
+      + '</div>'
+      + (x.texto ? '<div class="q">“' + esc(x.texto) + '…”</div>' : "")
+      + '</article>';
+  }).join("") || '<article class="card"><div class="k">Sin datos</div><div class="m">No se pudo leer ninguna fecha.</div></article>';
+
+  document.getElementById("actualizado").textContent = larga(d.actualizado);
+  document.getElementById("hace").textContent = hace(d.actualizado);
+  document.getElementById("estado").textContent = items.length + " reportes · mes de " + mesLargo(d.mes);
+
+  const canales = (d.canales || []).map(c =>
+    '<a href="' + esc(c) + '" target="_blank" rel="noopener">' + esc(canalDe(c)) + '</a>').join(" y ");
+  document.getElementById("attr").innerHTML =
+    "Fuente: " + (canales || "canales de Telegram") + " · recopilado automáticamente y revisado cada día.";
+}
+
+async function carga(forzar){
+  try{
+    const r = await fetch("fechas.json" + (forzar ? "?t=" + Date.now() : ""), {cache: forzar ? "reload" : "default"});
+    if(!r.ok) throw new Error("HTTP " + r.status);
+    return await r.json();
+  }catch(e){ return null; }
+}
+
+(function inicio(){
+  document.getElementById("anio").textContent = new Date().getFullYear();
+  pintaTramites(FALLBACK);
+
+  carga(false).then(d => { if (d && d.datos) pintaTramites(d); });
+
+  const btn = document.getElementById("revisar");
+  const estado = document.getElementById("estado");
+
+  btn.addEventListener("click", function(){
+    btn.classList.add("loading");
+    document.getElementById("revisarTxt").innerHTML = '<span class="spin"></span>Revisando…';
+    const antes = document.getElementById("actualizado").textContent;
+
+    carga(true).then(function(d){
+      btn.classList.remove("loading");
+      document.getElementById("revisarTxt").textContent = "Revisar fuentes";
+
+      if (!d || !d.datos){
+        estado.className = "estado err";
+        estado.innerHTML = "<b>No se pudo leer el archivo de datos.</b> Estás viendo la última copia guardada en la página.";
+        return;
+      }
+      pintaTramites(d);
+      estado.className = "estado";
+      const despues = larga(d.actualizado);
+      if (antes === despues){
+        estado.innerHTML = "<b>Sin novedades.</b> " + (d.datos||[]).length + " reportes · actualizado " + despues + " (revisado ahora)";
+      } else {
+        estado.innerHTML = "<b>¡Actualizado!</b> Ahora: " + despues + " · " + (d.datos||[]).length + " reportes";
+      }
+    });
+  });
+
+  document.querySelectorAll("[data-wa]").forEach(function(a){
+    const motivo = a.dataset.wa;
+    const texto = "Hola DATA ARUCA 👋 Escribo desde su PÁGINA WEB y quiero información sobre " + motivo + ".";
+    a.href = "https://wa.me/5352164763?text=" + encodeURIComponent(texto);
+    a.target = "_blank"; a.rel = "noopener";
+  });
+
+  const io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add("on"); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  document.querySelectorAll(".rv").forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
