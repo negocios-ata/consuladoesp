@@ -1,5 +1,5 @@
 {
-  "actualizado": "2026-11-18",
+  "actualizado": "2026-11-20",
   "mes": "2026-11",
   "canales": [
     "https://t.me/AsesorVirtualC",
@@ -31,9 +31,9 @@
       "etiqueta": "Credenciales de Legalización",
       "fecha": "2026-08-01",
       "precision": "mes",
-      "mensaje": "2026-11-18",
+      "mensaje": "2026-11-19",
       "fuente": "https://t.me/AsesorVirtualC",
-      "texto": "📱AVC REPORTES 👉🏻 SERVICIO CONSULAR: LEGALIZACIÓN CONSULAR CREDENCIALES 🦖🦖DE AGOSTO DE 2026 📝 Información recopilada de grupos y clientes HORARIO ESTIM",
+      "texto": "➡AVC REPORTES 👉🏻SERVICIO CONSULAR: LEGALIZACIÓN CONSULAR CREDENCIALES 🔢🔢DE AGOSTO DE 2026 🗒 Información recopilada de grupos y clientes HORARIO ESTIMA",
       "antiguo": false
     },
     {
@@ -109,12 +109,12 @@
     {
       "tipo": "fecha",
       "etiqueta": "Transcripción de Matrimonio",
-      "fecha": "2026-10-01",
+      "fecha": "2026-11-01",
       "precision": "mes",
-      "mensaje": "2026-10-06",
+      "mensaje": "2026-11-20",
       "fuente": "https://t.me/AsesorVirtualC",
-      "texto": "👨💻AVC REPORTES 👉🏻 SERVICIO CONSULAR: TRANSCRIPCIÓN Y CERTIFICADO DE MATRIMONIO CREDENCIALES 😀😀DE OCTUBRE DE 2026 📝 Información recopilada de grupos y ",
-      "antiguo": true
+      "texto": "👨💻AVC REPORTES 👉🏻 SERVICIO CONSULAR: TRANSCRIPCIÓN Y CERTIFICADO DE MATRIMONIO CREDENCIALES ☺😂DE NOVIEMBRE DE 2026 📝 Información recopilada de grupos ",
+      "antiguo": false
     }
   ]
 }
